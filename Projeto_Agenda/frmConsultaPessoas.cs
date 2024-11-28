@@ -24,26 +24,6 @@ namespace Projeto_Agenda
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             string vFiltro;
@@ -53,13 +33,28 @@ namespace Projeto_Agenda
             switch(cmbProcurar.Text)
             {
                 case "Que contém":
-                    vFiltro += $" like '%{txtValor.Text}%'";
+                    vFiltro += $" like '%{txtValorUm.Text}%'";
                     break;
                 case "Todos":
                     vFiltro = "";
                     break;
             }
             pessoaBindingSource.Filter = vFiltro;
+        }
+
+        private void cmbProcurar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(cmbColuna.Text)
+            {
+               // case "Id":
+
+                   // break;
+            }
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

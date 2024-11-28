@@ -33,31 +33,31 @@ namespace Projeto_Agenda
             this.cmbColuna = new System.Windows.Forms.ComboBox();
             this.cmbProcurar = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtValor = new System.Windows.Forms.TextBox();
-            this.txtValor2 = new System.Windows.Forms.TextBox();
-            this.lblColuna = new System.Windows.Forms.Label();
+            this.lblValor2 = new System.Windows.Forms.Label();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblProcurar = new System.Windows.Forms.Label();
+            this.lblColuna = new System.Windows.Forms.Label();
+            this.txtValor2 = new System.Windows.Forms.TextBox();
+            this.txtValorUm = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSet_Agenda = new Projeto_Agenda.DataSet_Agenda();
-            this.pessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pessoaTableAdapter = new Projeto_Agenda.DataSet_AgendaTableAdapters.PessoaTableAdapter();
-            this.pessoaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataNascDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.lblValor2 = new System.Windows.Forms.Label();
-            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.pessoaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_Agenda = new Projeto_Agenda.DataSet_Agenda();
+            this.pessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pessoaTableAdapter = new Projeto_Agenda.DataSet_AgendaTableAdapters.PessoaTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbColuna
@@ -74,7 +74,6 @@ namespace Projeto_Agenda
             this.cmbColuna.Name = "cmbColuna";
             this.cmbColuna.Size = new System.Drawing.Size(196, 28);
             this.cmbColuna.TabIndex = 0;
-            this.cmbColuna.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cmbProcurar
             // 
@@ -90,7 +89,7 @@ namespace Projeto_Agenda
             this.cmbProcurar.Name = "cmbProcurar";
             this.cmbProcurar.Size = new System.Drawing.Size(191, 28);
             this.cmbProcurar.TabIndex = 1;
-            this.cmbProcurar.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cmbProcurar.SelectedIndexChanged += new System.EventHandler(this.cmbProcurar_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -100,7 +99,7 @@ namespace Projeto_Agenda
             this.groupBox1.Controls.Add(this.lblProcurar);
             this.groupBox1.Controls.Add(this.lblColuna);
             this.groupBox1.Controls.Add(this.txtValor2);
-            this.groupBox1.Controls.Add(this.txtValor);
+            this.groupBox1.Controls.Add(this.txtValorUm);
             this.groupBox1.Controls.Add(this.cmbColuna);
             this.groupBox1.Controls.Add(this.cmbProcurar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -110,21 +109,46 @@ namespace Projeto_Agenda
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parâmetros para Consulta";
             // 
-            // txtValor
+            // lblValor2
             // 
-            this.txtValor.Location = new System.Drawing.Point(446, 67);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(163, 26);
-            this.txtValor.TabIndex = 2;
-            this.txtValor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.lblValor2.AutoSize = true;
+            this.lblValor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor2.Location = new System.Drawing.Point(610, 22);
+            this.lblValor2.Name = "lblValor2";
+            this.lblValor2.Size = new System.Drawing.Size(96, 25);
+            this.lblValor2.TabIndex = 8;
+            this.lblValor2.Text = "2º Valor:";
             // 
-            // txtValor2
+            // lblValor
             // 
-            this.txtValor2.Location = new System.Drawing.Point(615, 67);
-            this.txtValor2.Name = "txtValor2";
-            this.txtValor2.Size = new System.Drawing.Size(158, 26);
-            this.txtValor2.TabIndex = 3;
-            this.txtValor2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(441, 22);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(96, 25);
+            this.lblValor.TabIndex = 7;
+            this.lblValor.Text = "1º Valor:";
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnFiltrar.Location = new System.Drawing.Point(825, 45);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(113, 76);
+            this.btnFiltrar.TabIndex = 6;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // lblProcurar
+            // 
+            this.lblProcurar.AutoSize = true;
+            this.lblProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcurar.Location = new System.Drawing.Point(228, 22);
+            this.lblProcurar.Name = "lblProcurar";
+            this.lblProcurar.Size = new System.Drawing.Size(101, 25);
+            this.lblProcurar.TabIndex = 5;
+            this.lblProcurar.Text = "Procurar:";
             // 
             // lblColuna
             // 
@@ -136,15 +160,20 @@ namespace Projeto_Agenda
             this.lblColuna.TabIndex = 4;
             this.lblColuna.Text = "Coluna:";
             // 
-            // lblProcurar
+            // txtValor2
             // 
-            this.lblProcurar.AutoSize = true;
-            this.lblProcurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProcurar.Location = new System.Drawing.Point(228, 22);
-            this.lblProcurar.Name = "lblProcurar";
-            this.lblProcurar.Size = new System.Drawing.Size(101, 25);
-            this.lblProcurar.TabIndex = 5;
-            this.lblProcurar.Text = "Procurar:";
+            this.txtValor2.Location = new System.Drawing.Point(615, 67);
+            this.txtValor2.Name = "txtValor2";
+            this.txtValor2.Size = new System.Drawing.Size(158, 26);
+            this.txtValor2.TabIndex = 3;
+            // 
+            // txtValorUm
+            // 
+            this.txtValorUm.Location = new System.Drawing.Point(446, 67);
+            this.txtValorUm.Name = "txtValorUm";
+            this.txtValorUm.Size = new System.Drawing.Size(163, 26);
+            this.txtValorUm.TabIndex = 2;
+            this.txtValorUm.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // groupBox2
             // 
@@ -158,6 +187,7 @@ namespace Projeto_Agenda
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -174,25 +204,6 @@ namespace Projeto_Agenda
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(937, 508);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dataSet_Agenda
-            // 
-            this.dataSet_Agenda.DataSetName = "DataSet_Agenda";
-            this.dataSet_Agenda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pessoaBindingSource
-            // 
-            this.pessoaBindingSource.DataMember = "Pessoa";
-            this.pessoaBindingSource.DataSource = this.dataSet_Agenda;
-            // 
-            // pessoaTableAdapter
-            // 
-            this.pessoaTableAdapter.ClearBeforeFill = true;
-            // 
-            // pessoaBindingSource1
-            // 
-            this.pessoaBindingSource1.DataMember = "Pessoa";
-            this.pessoaBindingSource1.DataSource = this.dataSet_Agenda;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -243,36 +254,24 @@ namespace Projeto_Agenda
             this.dataNascDataGridViewTextBoxColumn.Name = "dataNascDataGridViewTextBoxColumn";
             this.dataNascDataGridViewTextBoxColumn.Width = 150;
             // 
-            // lblValor
+            // pessoaBindingSource1
             // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(441, 22);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(96, 25);
-            this.lblValor.TabIndex = 7;
-            this.lblValor.Text = "1º Valor:";
+            this.pessoaBindingSource1.DataMember = "Pessoa";
+            this.pessoaBindingSource1.DataSource = this.dataSet_Agenda;
             // 
-            // lblValor2
+            // dataSet_Agenda
             // 
-            this.lblValor2.AutoSize = true;
-            this.lblValor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor2.Location = new System.Drawing.Point(610, 22);
-            this.lblValor2.Name = "lblValor2";
-            this.lblValor2.Size = new System.Drawing.Size(96, 25);
-            this.lblValor2.TabIndex = 8;
-            this.lblValor2.Text = "2º Valor:";
+            this.dataSet_Agenda.DataSetName = "DataSet_Agenda";
+            this.dataSet_Agenda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnFiltrar
+            // pessoaBindingSource
             // 
-            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnFiltrar.Location = new System.Drawing.Point(825, 45);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(113, 76);
-            this.btnFiltrar.TabIndex = 6;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            this.pessoaBindingSource.DataMember = "Pessoa";
+            this.pessoaBindingSource.DataSource = this.dataSet_Agenda;
+            // 
+            // pessoaTableAdapter
+            // 
+            this.pessoaTableAdapter.ClearBeforeFill = true;
             // 
             // frmConsultaPessoas
             // 
@@ -288,9 +287,9 @@ namespace Projeto_Agenda
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,7 +303,7 @@ namespace Projeto_Agenda
         private System.Windows.Forms.Label lblProcurar;
         private System.Windows.Forms.Label lblColuna;
         private System.Windows.Forms.TextBox txtValor2;
-        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtValorUm;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DataSet_Agenda dataSet_Agenda;

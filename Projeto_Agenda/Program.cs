@@ -16,7 +16,7 @@ namespace Projeto_Agenda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConsultaPessoas());
+            Application.Run(new frmMenu());
         }
     }
 }
