@@ -28,5 +28,17 @@ namespace Projeto_Agenda
             objConPessoas.MdiParent = this;
             objConPessoas.Show();
         }
+
+        private void relatórioPessoasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVisualizaListaPessoas objVisualiza = new frmVisualizaListaPessoas();
+            objVisualiza.MdiParent = this;
+            objVisualiza.Show();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
